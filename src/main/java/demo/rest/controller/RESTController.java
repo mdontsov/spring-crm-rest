@@ -43,4 +43,9 @@ public class RESTController {
         service.deleteCustomer(customer.getId());
         return "Deleted customer ID: " + customer.getId();
     }
+
+    @PutMapping("/customers")
+    public Customer updateCustomer(@RequestBody Customer customer) {
+        return service.updateCustomer(customer);
+    }
 }

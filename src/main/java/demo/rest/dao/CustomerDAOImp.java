@@ -52,4 +52,11 @@ public class CustomerDAOImp implements CustomerDAO { // <- interface is a Proxy 
         Customer customer = session.get(Customer.class, customerId);
         session.delete(customer);
     }
+
+    @Override
+    public Customer updateCustomer(Customer customer) {
+        Session session = factory.getCurrentSession();
+        session.update(customer);
+        return customer;
+    }
 }

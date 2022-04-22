@@ -37,4 +37,10 @@ public class CustomerServiceImp implements CustomerService {
     public void addCustomer(Customer customer) {
         customerDAO.addCustomer(customer);
     }
+
+    @Override
+    @Transactional
+    public Customer updateCustomer(Customer customer) {
+        return customerDAO.updateCustomer(customer);
+    }
 }

@@ -13,4 +13,6 @@ public interface CustomerDAO {
     Customer getCustomer(int customerId);
 
     void deleteCustomer(int customerId);
+
+    Customer updateCustomer(Customer customer);
 }
