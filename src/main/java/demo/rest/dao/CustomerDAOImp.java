@@ -36,7 +36,6 @@ public class CustomerDAOImp implements CustomerDAO { // <- interface is a Proxy 
             session.getTransaction().rollback();
         } else {
             session.saveOrUpdate(customer); // <- IF primary key empty then SAVE otherwise UPDATE
-            session.getTransaction().commit();
         }
     }
 
@@ -52,6 +51,5 @@ public class CustomerDAOImp implements CustomerDAO { // <- interface is a Proxy 
         Session session = factory.getCurrentSession();
         Customer customer = session.get(Customer.class, customerId);
         session.delete(customer);
-        session.getTransaction().commit();
     }
 }

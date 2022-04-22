@@ -31,7 +31,7 @@ public class RESTController {
     }
 
     @PostMapping("/customers")
-    public Customer addCustomer(@RequestBody @NotNull Customer customer) {
+    public Customer addCustomer(@RequestBody @NotNull Customer customer) { // <- binds POJO as method parameter
         customer.setId(0);
         service.addCustomer(customer);
         return customer;
